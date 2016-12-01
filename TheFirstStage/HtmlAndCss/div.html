@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Div</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.div{
+			width: 600px;
+			height: 600px;
+			background-color: green;
+			position: relative;
+			top: 10px;
+		}
+		.diva{
+			float: left;
+			width: 300px;
+			height: 300px;
+			background-color: yellow;
+		}
+		.divb{
+			float: left;
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+		.divc{
+			margin-top: 10px;
+			width: 600px;
+			height: 600px;
+			background-color: pink;
+		}
+		.fix{
+			position: fixed;
+			top:200px;
+			width: 200px;
+			height: 200px;
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+<div class="div">
+	<div class="diva"></div>
+	<div class="divb"></div>
+</div>
+<div class="fix">
+	<p>123</p>
+	<p>456</p>
+	<p>789</p>
+</div>
+<div class="divc">123</div>
+<!--[if !ie 8]><div class="div"></div><![endif]-->
+
+
+
+</body>
+</html>
