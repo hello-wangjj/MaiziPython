@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var person={
+        username:'wangjj',
+        age:25,
+        salary:11,
+        sex:'男'
+    }
+    document.write(person.username+'<br>');
+    document.write(person['age']+'<br>');
+    var key='salary';
+    document.write(person.key+'<br>');
+    document.write(person[key]+'<br>');
+    document.write(person['key']+'<br>');
+    for(var p in person){
+        document.write(p+person[p]+'<br>');
+    }
+</script>
+</body>
+</html>

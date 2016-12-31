@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj={
+        inter:{},
+        x:1
+    };
+    Object.freeze(obj);
+    obj.inter.y=2;
+    console.log(obj.inter.y)
+    //深度冻结
+    function deep_freeze(obj) {
+        var prop,prop_key;
+        Object.freeze(obj);
+        for(prop_key in obj){
+            prop=obj[prop_key];
+            // obj.hasOwnProperty(prop_key)  说明还是对象
+            if(!obj.hasOwnProperty(prop_key)||!(typeof prop==='object')||Object.isFrozen(prop)){
+                continue;
+            }
+            deep_freeze(prop)
+        }
+    }
+    deep_freeze(obj);
+    obj.inter.z=3
+    console.log(obj.inter.z);
+</script>
+</body>
+</html>

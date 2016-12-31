@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>func变量</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var x=12;
+        function test() {
+            document.write('函数体内'+x+'<br>');
+            x=19;
+            document.write('函数体内的x'+x+'<br>');
+
+        }
+        document.write('函数体外'+x+'<br>');
+        test();
+        document.write('函数体外'+x+'<br>');
+        var x=1,y=2;
+        function calc(x,y) {
+            document.write('a:'+a+'<br>');
+            document.write('x:'+x+'<br>');
+            document.write('y:'+y+'<br>');
+            var x=0,y=6;
+            z=x+y;
+            var a=108;
+            document.write('--a:'+a+'<br>');
+            document.write('--x:'+x+'<br>');
+            document.write('--y:'+y+'<br>');
+            document.write('z:'+z+'<br>');
+            return z;
+        }
+        document.write('---x:'+x+'<br>');
+        document.write('---y:'+y+'<br>');
+        document.write('z:'+calc(x,y)+'<br>');
+        document.write('----x:'+x+'<br>');
+        document.write('----y:'+y+'<br>');
+
+    </script>
+</body>
+</html>

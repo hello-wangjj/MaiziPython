@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+var obj=Object.create({},{
+    get_foo:{
+        value:function () {
+            return this.foo
+        }
+    }
+});
+obj.foo=3;
+console.log(obj.get_foo());
+console.log(Object.keys(obj));
+console.log(Object.getOwnPropertyDescriptor(obj,'foo'));
+var obj1={};
+Object.defineProperty(obj1,'x',{
+    value:1
+});
+console.log(Object.getOwnPropertyDescriptor(obj1,'x'));
+function Test() {
+
+}
+var test=new Test();
+console.log(test.constructor);
+var number=new Number(123);
+console.log(number.constructor===Number);
+
+</script>
+</body>
+</html>

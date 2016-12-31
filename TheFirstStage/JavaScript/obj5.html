@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj={
+        __proto__:null,
+        value:1
+    }
+    Object.defineProperty(obj,'x',{
+        value:1,
+        writable:false,
+        configurable:true
+    })
+    document.write(obj.x+'<br>');
+    obj.x=2;
+    document.write(obj.x+'<br>');
+    Object.defineProperty(obj,'x',{
+        writable:true,
+        configurable:false
+    })
+    obj.x=3;
+    document.write(obj.x+'<br>');
+    obj.y=4;
+    document.write(obj.y+'<br>');
+    for(var p in obj){
+        document.write(p+'<br>');
+    }
+    Object.defineProperty(obj,'y',{
+        writable:false,
+        enumerable:false
+    })
+    obj.y=5;
+    document.write(obj.y+'<br>');
+    for(var p in obj){
+        document.write(p+'<br>');
+    }
+    document.write(Object.getOwnPropertyDescriptor(obj,'x')+'<br>');
+    console.log(Object.getOwnPropertyDescriptor(obj,'x'));
+    console.log(Object.getOwnPropertyDescriptor(obj,'y'));
+    Object.defineProperty(obj,'z',{
+        value:11
+    })
+    console.log(Object.getOwnPropertyDescriptor(obj,'z'));
+</script>
+</body>
+</html>

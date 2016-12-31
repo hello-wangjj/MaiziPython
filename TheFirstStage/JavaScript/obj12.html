@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj={x:1}
+    Object.preventExtensions(obj);
+    console.log(Object.isFrozen(obj));
+    Object.defineProperty(obj,'x',{
+        value:12
+    });
+    console.log(Object.isFrozen(obj));
+    Object.defineProperty(obj,'x',{
+        writable:false,
+        configurable:false
+    })
+    console.log(Object.isFrozen(obj));
+
+</script>
+</body>
+</html>

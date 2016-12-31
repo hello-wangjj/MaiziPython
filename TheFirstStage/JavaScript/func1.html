@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    (function (x,y) {
+        alert(x+y)
+    })(3,4)
+    function add(x) {
+        return x+1;
+    }
+    alert(add.call(add,1));
+    alert(add.apply(add,[1]));
+</script>
+</body>
+</html>

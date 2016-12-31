@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function foo() {};
+    foo.prototype.z=3;
+    var obj=new foo();
+    obj.x=1;
+    obj.y=2;
+    document.write(obj.x+'<br>');
+    document.write(obj.y+'<br>');
+    document.write(obj.z+'<br>');
+    document.write(obj.toString()+'<br>');
+    document.write(obj.z+'<br>');
+    document.write(Object.keys(obj)+'<br>');
+    for(var p in obj){
+        document.write(p+'<br>');
+    }
+    document.write(Object.getOwnPropertyNames(obj));
+</script>
+</body>
+</html>

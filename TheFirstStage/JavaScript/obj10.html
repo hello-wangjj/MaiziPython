@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj={
+        func:function () {
+        },
+        foo:'king'
+    };
+    obj.test='this is a test';
+    console.log(obj.func);
+    delete obj.func;
+    console.log(obj.func);
+    var o=Object.freeze(obj);
+    console.log(o===obj);
+    console.log(Object.isFrozen(o));
+    o.x=1;
+    console.log(o.x);
+    console.log(o.foo);
+
+
+</script>
+</body>
+</html>

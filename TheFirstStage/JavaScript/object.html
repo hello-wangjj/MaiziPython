@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Test(num1,num2) {
+        this.n1=num1;
+        this.n2=num2;
+    }
+    var obj=new Test(5,6);
+    document.write(typeof obj+'<br>');
+    document.write(obj+'<br>');
+    document.write(obj['n1']+'<br>');
+    alert(obj instanceof Test);
+
+    var obj2=Object.create({x:1});
+    document.write(obj2['x']+'<br>');
+    document.write(obj2.x+'<br>');
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var obj={
+        x:1,
+        y:2
+    }
+    Object.defineProperty(obj,'z',{
+        value:55
+    });
+    document.write(obj.z+'<br>');
+    obj.z=66;
+    document.write(obj.z+'<br>');
+    document.write(Object.getOwnPropertyNames(obj)+'<br>');
+    for(var p in obj){
+        document.write(p+'<br>');
+    }
+    Object.defineProperty(obj,'l',{
+        value:77,
+        writable:true,//可写
+        enumerable:true,//可迭代
+        configurable:true//可配置
+    });
+    document.write(obj.l+'<br>');
+    obj.l=66;
+    document.write(obj.l+'<br>');
+    document.write(Object.getOwnPropertyNames(obj)+'<br>');
+    for(var p in obj){
+        document.write(p+'<br>');
+    }
+    delete obj.l;
+    for(var p in obj){
+        document.write(p+'<br>');
+    }
+</script>
+</body>
+</html>

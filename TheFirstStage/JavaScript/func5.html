@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--闭包-->
+<script type="text/javascript">
+    var n;
+    function f() {
+        var a='king';
+        n=function () {
+            return a
+        }
+    }
+    f();
+    document.write(n()+'<br>');
+    
+    function test(x) {
+        var i=0;
+        return function () {
+            document.write(i+'<br>')
+            return x[i++]
+        }
+    }
+    var next=test(['a','b','c','d'])
+    document.write(typeof next+'<br>')
+    document.write(next()+'<br>');
+    document.write(next()+'<br>');
+    document.write(next()+'<br>');
+    document.write(next()+'<br>')
+
+    function f2() {
+        function test(x) {
+            return function () {
+                return x
+            }
+        }
+        var a=[];
+        var i;
+        for(i=0;i<3;i++){
+            a[i]=test(i);
+        }
+        return a
+    }
+    var res=f2();
+    document.write(res+'<br>');
+    document.write(res[0]()+'<br>');
+    document.write(res[1]()+'<br>');
+    document.write(res[2]()+'<br>');
+</script>
+</body>
+</html>
