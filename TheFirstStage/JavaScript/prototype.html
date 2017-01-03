@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Product(name,color) {
+        this.name=name;
+        this.color=color;
+        this.what_are_you=function () {
+            return 'this is a'+this.name+' '+this.color;
+        }
+    }
+//    Product.prototype.price=200;
+//    Product.prototype.rating=3;
+//    Product.prototype.get_info=function () {
+//        return '等级：'+this.rating+'--价钱:'+this.price;
+//    }
+//    Product.prototype.get=function (what) {
+//        return this[what]
+//    }
+
+    Product.prototype={
+        hair:true,
+        face:true,
+        price:200,
+        rating:3,
+        memory:'64G',
+        get_memory:function () {
+            return 'memory:'+this.memory
+        },
+        get_info:function () {
+        return '等级：'+this.rating+'--价钱:'+this.price;
+        },
+        get:function (what) {
+            return this[what]
+        }
+    }
+    product=new Product('wangjj','yellow');
+    console.log(product.price);
+    console.log(product.what_are_you());
+    console.log(product.get_info());
+    console.log(product.get('name'));
+    console.log(product.get_memory());
+    console.log(product.constructor);
+    console.log(product.constructor.prototype);
+    console.log(product.constructor.prototype.constructor);
+    console.log(Product.prototype);
+    console.log(Product);
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+var patt=new RegExp('javascript');
+var str='this is a javascript line';
+console.log(patt.test(str));
+var patt2=/javascript/;
+console.log(patt2.test(str));
+var patt3=/javaScript/i;
+console.log(patt3.test(str));
+//[]
+console.log(/[abcde]/.test('tel'));
+console.log(/[^abc]/.test('wjj'));
+console.log(/./.test('\n'));
+console.log(/./.test('wangjj'));
+console.log(/\bj/g.test('wangjj'));
+console.log(/\bw/.test('wangjj'));
+console.log(/j\b/.test('wangjj'));
+var patt4=/i/ig;
+str2='this is a javesript lessons';
+//console.log(patt4.exec(str2));
+var my_arr;
+while ((my_arr=patt4.exec(str2))!=null){
+    var msg='找到了'+my_arr[0]+'!';
+    msg+='下一个匹配从'+patt4.lastIndex+'开始';
+    console.log(msg)
+}
+str3='Hello Mai Edu';
+res=str3.replace(/[A-Z]/g,func);
+function func(match) {
+    return 'Wangjj_'+match.toLowerCase();
+}
+console.log(res);
+</script>
+</body>
+</html>
