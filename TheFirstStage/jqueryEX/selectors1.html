@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        .test{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="a">
+    <p>a</p>
+    <div class="test">
+        <p id="first">1</p>
+        <p>2</p>
+        <p>3</p>
+        <p id="second">4</p>
+        <p>5</p>
+        <p>6</p>
+    </div>
+</div>
+<button>click me</button>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').on('click',function () {
+//            $('div').css('background-color','yellow');
+            $('.test p').css('background-color','red');
+            $('.a > p').css('background-color','yellow');
+            $('#first + p').css('background-color','blue');
+            $('#second ~ p').css('background-color','gray');
+        })
+    })
+</script>
+</body>
+</html>

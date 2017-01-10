@@ -38,6 +38,7 @@
             return this[what]
         }
     }
+    Product.prototype.constructor=Product;
     product=new Product('wangjj','yellow');
     console.log(product.price);
     console.log(product.what_are_you());

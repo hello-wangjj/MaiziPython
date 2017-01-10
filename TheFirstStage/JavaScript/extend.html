@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Shape() {
+        this.name = 'shape';
+        this.toString = function () {
+            return this.name
+        }
+    }
+    function Two_shape() {
+        this.name='2D shape';
+    }
+    function Triangle(side,height) {
+        this.name='triangle';
+        this.side=side;
+        this.height=height;
+        this.get_area=function () {
+            return this.side*this.height/2
+        }
+    }
+    Two_shape.prototype=new Shape();
+    Triangle.prototype=new Two_shape();
+    console.log(Two_shape);
+    console.log(Two_shape.prototype);
+    console.log(Triangle);
+    console.log(Triangle.prototype);
+    //充值constructor属性
+    Two_shape.prototype.constructor=Two_shape;
+    Triangle.prototype.constructor=Triangle;
+    console.log(Two_shape);
+    console.log(Two_shape.prototype);
+    console.log(Triangle);
+    console.log(Triangle.prototype);
+    var my_triangle=new Triangle(5,10);
+    console.log(my_triangle.get_area());
+    console.log(my_triangle.toString());
+    console.log(my_triangle.constructor);
+
+</script>
+</body>
+</html>

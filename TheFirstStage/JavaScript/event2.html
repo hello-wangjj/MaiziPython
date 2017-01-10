@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="test1" id="btn1">
+<input type="button" value="test2" id="btn2">
+<input type="button" value="test3" id="btn3">
+<a href="http://www.baidu.com" target="_blank" id="baidu_link">跳转到百度</a>
+<script type="text/javascript">
+    var btn1=document.getElementById('btn1');
+    btn1.onclick=function (event) {
+        alert(event.type);
+        alert(this.tagName);
+    }
+    var btn2=document.getElementById('btn2');
+    btn2.addEventListener('click',function (e) {
+        alert(e.type);
+        alert(e.currentTarget);
+        alert(this==e.currentTarget);
+        alert(e.target);
+        alert(this.tagName);
+    },false);
+    var btn3=document.getElementById('btn3');
+    var handler=function (e) {
+        var type = e.type;
+        switch (type) {
+            case 'click':
+                alert('clicked');
+                break;
+            case 'mouseover':
+                e.target.style.backgroundColor = 'red';
+                break;
+            case 'mouseout':
+                e.target.style.backgroundColor = '';
+                break;
+        }
+    }
+        btn3.onclick=handler;
+        btn3.onmouseover=handler;
+        btn3.onmouseout=handler;
+    var baidu_link=document.getElementById('baidu_link');
+    baidu_link.onclick=function (e) {
+        alert(e.cancelable);
+        alert(e.eventPhase);
+        e.preventDefault();//阻止默认行为
+    }
+    document.body.addEventListener('click',function (e) {
+        alert(e.eventPhase);
+    },true);
+</script>
+</body>
+</html>

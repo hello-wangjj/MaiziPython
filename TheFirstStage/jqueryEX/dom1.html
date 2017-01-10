@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div>hello world!</div>
+<div class="a">hi wangjj!</div>
+<div class="b">hi1</div>
+<div class="b">hi2</div>
+<div class="b">hi3<p>1111</p></div>
+<button>click me</button>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').on('click',function () {
+            alert($('div').text());
+            $('.a').html('<p>hi</p><p>wangjj!!</p>');
+            $('.b').html(function (index,html) {
+                alert(''+index+':'+html);
+            })
+        })
+    })
+</script>
+</body>
+</html>

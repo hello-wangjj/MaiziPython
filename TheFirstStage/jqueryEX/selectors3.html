@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        #zhou{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>Hello world!</div>
+    <div>maizi edu</div>
+    <div>王俊杰</div>
+    <div style="width: 100px;height: 100px; background-color: yellow"></div>
+    <div><span>hi wangjj</span></div>
+    <p>hello wangjj</p>
+    <p id="zhou">周志宇SB</p>
+    <ul>
+        <li>0</li>
+        <li class="first">1</li>
+        <li class="second">2</li>
+        <li class="se">3</li>
+        <li>4</li>
+    </ul>
+    <ui>
+        <li>0</li>
+        <li class="z1">1</li>
+        <li class="z2">2</li>
+        <li>3</li>
+        <li>4</li>
+    </ui>
+    <button>click me</button>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').on('click',function () {
+            $('div:contains(edu)').css('background-color','red');
+            $('div:contains(杰)').css('background-color','red');
+            $('div:empty').css('background-color','red');
+            $('div:has(span)').css('background-color','blue');
+            $('p:parent').css('background-color','yellow');
+            $('#zhou').css('display','block');
+            $('li[class]').css('background-color','yellow');
+            $('li[class^="sec"]').css('background-color','blue');
+            $('[class*="z"]').css('background-color','gray');
+        })
+    })
+</script>
+</body>
+</html>

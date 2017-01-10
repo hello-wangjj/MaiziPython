@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" value="hello" disabled>
+<input type="text" value="world">
+<button>click me</button>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('button').on('click',function () {
+        $('input:enabled').css('background-color','red');
+        $('input:disabled').css('background-color','yellow');
+//        document.write($('input:enabled').val());
+    })
+})
+</script>
+</body>
+</html>
