@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <style type="text/css">
+        .block{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        .drop{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed black;
+            opacity: 0.5;
+        }
+        .droppable-active{
+            border:1px solid red;
+        }
+        .droppable-hover{
+            background-color: red;
+        }
+        .ui-selected {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="block"></div>
+<div class="drop"></div>
+<ul class="ul-srot">
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<input type="text" placeholder="截止日期 (月/日/年)" id="datepicker" class="addDate"/>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.block').draggable({helper:'clone',opacity:0.5});
+        $('.drop').droppable({
+            accept:'.block',
+            activeClass:'droppable-active',
+            hoverClass:'droppable-hover',
+            drop:function (ev,ui) {
+                $(this).append('<br>Dropped!')
+            }
+        });
+        $('.ul-srot').sortable({
+            axis:'y'
+        });
+        $('.ul-srot').selectable();
+        $('#datepicker').datepicker();
+    })
+</script>
+</body>
+</html>

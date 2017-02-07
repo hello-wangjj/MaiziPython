@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div class="a">
+    <div>a</div>
+    <div class="b">b</div>
+    <div>d</div>
+</div>
+<ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<ol>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+</ol>
+<button>click me</button>
+<div class="c">c</div>
+<div class="d">ddd</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').on('click',function () {
+//            $('.a').append($('.c'));
+//            $('.a').prepend($('.c'));
+//            $('.c').appendTo($('.a'));
+//            $('.c').prependTo($('.a'));
+//            $('.a').after($('.c'));
+//            $('.a').before($('.c'));
+//            $('.c').insertAfter($('.a'));
+//            $('.c').insertBefore($('.a'));
+            var a=$('ul').remove();
+            a.insertAfter($('button'));
+            var b=$('ol').empty();
+            b.insertAfter($('button'));
+            $('.a').before($('.d').clone());
+        })
+    })
+</script>
+</body>
+</html>

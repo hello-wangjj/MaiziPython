@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        #result{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        .block{
+            position: relative;
+            background-color: #abc;
+            width: 40px;
+            height: 40px;
+            float: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="result">hello world</div>
+<button id="btn1">click me 1</button>
+<button id="btn2">click me 2</button>
+<button id="btn3">click me 3</button>
+<button id="btn4">click me 4</button>
+<button id="btn5">click me 5</button>
+<button id="btn6">click me 6</button>
+<button id="btn7">click me 7</button>
+<button id="btn8">自定义动画1</button>
+<button id="btn9">自定义动画2</button>
+<div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#btn1').on('click',function () {
+        $('#result').hide();
+    });
+    $('#btn2').on('click',function () {
+        $('#result').show();
+    });
+    $('#btn3').on('click',function () {
+        $('#result').toggle();
+    });
+    $('#btn4').on('click',function () {
+        $('#result').slideUp('1000',function () {
+            $('#result').slideDown('slow');
+        });
+    });
+    $('#btn5').on('click',function () {
+        $('#result').slideToggle('500');
+    });
+    $('#btn6').on('click',function () {
+        $('#result').fadeOut('1000',function () {
+            $('#result').fadeIn('500');
+        })
+    });
+    $('#btn7').on('click',function () {
+        $('#result').fadeTo('500',0.5,function () {
+            $('#result').fadeTo('500',1);
+        });
+    });
+    $('#btn8').on('click',function () {
+        $('#result').animate({
+            width:"100%",
+            height:"100%",
+            fontSize:'10em',
+            borderWidth:'10px',
+        },10000,'linear').hide(5000);
+        setTimeout(function () {
+            $('#result').stop(true,true);
+//            $('#result').stop(true,true);
+        },2000);
+    });
+    $("#btn9").click(function(){
+        $( ".block:first" ).animate({
+            left: 100
+        }, {
+            duration: 1000,
+            step: function( now, fx ){
+                $( ".block:gt(0)" ).css( "left", now );
+            }
+        });
+    });
+})
+</script>
+</body>
+</html>

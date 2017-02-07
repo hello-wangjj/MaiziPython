@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div id="result">before ajax</div>
+<button>click me</button>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').on('click',function () {
+            var ajax_load='<img src="loading.gif" alt="loading......">';
+            var load_url1='./api/index.html';
+            var load_url2='./api/index2.html';
+//            $('#result').html(ajax_load).load(load_url1);
+//            $('#result').html(ajax_load).load(load_url1+" #item2");
+            $('#result').html(ajax_load).load(load_url2,null,function () {
+                alert($('#result').html());
+            });
+        })
+    })
+</script>
+</body>
+</html>

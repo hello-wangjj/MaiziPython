@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        div[data-id='something']{
+            background-color: yellow;
+        }
+        p[data-id='something']{
+            background-color: red;
+        }
+        .blue{
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-
+<div data-id="something">hello world!</div>
+<p>hi wangjj</p>
+<h5>hi wangjj hi hi hi</h5>
+<h4>hi h4 </h4>
+<h3>hi h3</h3>
+<h2>hi h2</h2>
+<h1>hi h1</h1>
+<button>click me!</button>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').on('click',function () {
+            $('div').removeAttr('data-id');
+            $('p').attr('data-id','something');
+            $('h5').attr({
+                'data-id':'something',
+                'class':'blue'
+                });
+            $('h4').addClass('blue');
+            $('h3').toggleClass('blue');
+            alert($('h3').hasClass('blue'));
+            alert($('h3').css('color'));
+            alert(JSON.stringify($('h3').css(['text-decoration','color'])));
+            $('h2').css({
+                'background-color':'gray',
+                'color':'red'
+            })
+            $('h1').css('font-size',function (index,oldvalue) {
+                alert(oldvalue);
+                return "40px";
+            })
+        })
+    })
+</script>
 </body>
 </html>
